@@ -19,8 +19,8 @@ searchBtn.addEventListener('click', async () =>{
     resultDiv.innerHTML = `
   <h2>${data.name}</h2>
   <img src="${data.sprites.front_default}" alt="${data.name}">
-  <p>Height: ${data.height} dm</p>
-  <p>Weight: ${data.weight} hg</p>
+  <p>Height: ${data.height / 10} m</p>
+  <p>Weight: ${data.weight / 10} kg </p>
 `;    
   }catch (error: unknown) {
     resultDiv.innerHTML = `<p style="color: red;">Pokemon not found. Please try again.</p>`;
