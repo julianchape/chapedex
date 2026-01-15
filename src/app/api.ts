@@ -21,7 +21,9 @@ export async function fetchPokemonById(id:number): Promise<Pokemon>{
         weight: data.weight,
         sprites: {
             front_default : data.sprites.front_default
-        }
+        },
+        stats: data.stats,
+        types: data.types
     };
     return pokemon;
 }
@@ -54,7 +56,9 @@ export async function searchPokemonByName (name:string): Promise<Pokemon>{
         weight: data.weight,
         sprites:{
             front_default: data.sprites.front_default
-        }
+        },
+        stats: data.stats,
+        types: data.types
     };
 
     return pokemon;

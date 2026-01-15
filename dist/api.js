@@ -18,7 +18,9 @@ export async function fetchPokemonById(id) {
             weight: data.weight,
             sprites: {
                 front_default: data.sprites.front_default
-            }
+            },
+            stats: data.stats,
+            types: data.types
         };
         return pokemon;
     }
@@ -49,7 +51,9 @@ export async function searchPokemonByName(name) {
             weight: data.weight,
             sprites: {
                 front_default: data.sprites.front_default
-            }
+            },
+            stats: data.stats,
+            types: data.types
         };
         return pokemon;
     }

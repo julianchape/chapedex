@@ -6,6 +6,22 @@ export interface Pokemon{
     sprites:{
         front_default: string;
     };
+    stats: PokemonStat[];
+    types: PokemonType[];
+
+}
+
+export interface PokemonStat {
+    base_stat: number;
+    stat: {
+        name:string;
+    };
+}
+
+export interface PokemonType{
+    type:{
+        name:string;
+    };
 }
 
 export interface TeamPokemon extends Pokemon{
