@@ -11,6 +11,7 @@ searchBtn.addEventListener('click', async () => {
     // validation: don't fetch if input is empty
     if (!pokemonName)
         return;
+    resultDiv.innerHTML = `<p class="loading-text">Searching for ${pokemonName}...</p>`;
     // 2. Call searchPokemonByName (use try/catch!)
     try {
         const data = await searchPokemonByName(pokemonName);
