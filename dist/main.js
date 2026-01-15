@@ -63,7 +63,7 @@ searchBtn.addEventListener('click', async () => {
             <div class="flex flex-col items-center">
                 <!-- Pokemon Image -->
                 <div class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-full p-8 mb-4">
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" class="w-48 h-48">
+                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" class="w-48 h-48 [image-rendering:pixelated]">
                 </div>
                 
                 <!-- Pokemon Name & ID -->
