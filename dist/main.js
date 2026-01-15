@@ -16,8 +16,11 @@ searchBtn.addEventListener('click', async () => {
     try {
         const data = await searchPokemonByName(pokemonName);
         resultDiv.innerHTML = `
-    <h2> ${data.name}</h2>
-    <img src="${data.sprites.front_default}" alt="${data.name}">`;
+  <h2>${data.name}</h2>
+  <img src="${data.sprites.front_default}" alt="${data.name}">
+  <p>Height: ${data.height} dm</p>
+  <p>Weight: ${data.weight} hg</p>
+`;
     }
     catch (error) {
         resultDiv.innerHTML = `<p style="color: red;">Pokemon not found. Please try again.</p>`;
