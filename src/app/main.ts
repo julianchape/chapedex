@@ -40,8 +40,7 @@ searchBtn.addEventListener('click', async () => {
     resultDiv.classList.add('hidden');
     
     try {
-        const pokemon = await searchPokemonByName(pokemonName);
-        resultDiv.classList.remove('hidden');                
+        const pokemon = await searchPokemonByName(pokemonName);              
         // Create type badges
         const typeBadges = pokemon.types
             .map(t => `<span class="${getTypeColor(t.type.name)} text-white px-3 py-1 rounded-full text-sm font-bold uppercase">${t.type.name}</span>`)
@@ -65,7 +64,7 @@ searchBtn.addEventListener('click', async () => {
                 `;
             })
             .join('');
-        
+    
         resultDiv.innerHTML = `
             <div class="flex flex-col items-center">
                 <!-- Pokemon Image -->
@@ -106,6 +105,7 @@ searchBtn.addEventListener('click', async () => {
                 </button>
             </div>
         `;
+        resultDiv.classList.remove('hidden');  
         
     } catch (error: unknown) {
         resultDiv.innerHTML = `
