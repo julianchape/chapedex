@@ -1,4 +1,5 @@
 import { searchPokemonByName } from "./api.js";
+import { TeamPokemon, Pokemon } from "./types.js";
 
 const searchInput = document.getElementById('search-input') as HTMLInputElement;
 const searchBtn = document.getElementById('search-btn') as HTMLButtonElement;
@@ -133,3 +134,31 @@ searchInput.addEventListener('keypress', (e) => {
         searchBtn.click();
     }
 });
+
+class TeamManager {
+    static readonly MAX_TEAM_SIZE = 6;
+    private team: TeamPokemon[] = [];
+
+    constructor (){
+        this.team=[];
+        this.loadTeam();
+    }
+
+    private addToTeam(pokemon:Pokemon):boolean{
+        
+
+        return true;
+    }
+
+
+
+
+    private loadTeam():void{
+        const savedTeam = localStorage.getItem('pokemon_team');
+        if (savedTeam){
+            this.team = JSON.parse(savedTeam);
+        }else{
+            this.team = [];
+        }
+    }
+}
