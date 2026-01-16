@@ -37,7 +37,6 @@ function capitalize(str: string): string {
 searchBtn.addEventListener('click', async () => {
     const pokemonName = searchInput.value.trim();
     if (!pokemonName) return;
-    
     resultDiv.innerHTML = `<p class="text-center text-gray-600 py-8">Searching for ${pokemonName}...</p>`;
     
     try {
