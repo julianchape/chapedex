@@ -35,6 +35,7 @@ searchBtn.addEventListener('click', async () => {
     if (!pokemonName)
         return;
     resultDiv.classList.add('hidden');
+    resultDiv.classList.remove('animate-fade-in');
     try {
         const pokemon = await searchPokemonByName(pokemonName);
         // Create type badges
@@ -100,6 +101,9 @@ searchBtn.addEventListener('click', async () => {
             </div>
         `;
         resultDiv.classList.remove('hidden');
+        setTimeout(() => {
+            resultDiv.classList.add('animate-fade-in');
+        }, 10);
     }
     catch (error) {
         resultDiv.innerHTML = `
@@ -108,6 +112,8 @@ searchBtn.addEventListener('click', async () => {
                 <p class="text-gray-600">Try searching for another Pokémon!</p>
             </div>
         `;
+        resultDiv.classList.remove('hidden');
+        resultDiv.classList.add('animate-fade-in');
         if (error instanceof Error) {
             console.error('Error:', error.message);
         }
