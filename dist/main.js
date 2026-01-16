@@ -34,9 +34,10 @@ searchBtn.addEventListener('click', async () => {
     const pokemonName = searchInput.value.trim();
     if (!pokemonName)
         return;
-    resultDiv.innerHTML = `<p class="text-center text-gray-600 py-8">Searching for ${pokemonName}...</p>`;
+    resultDiv.classList.add('hidden');
     try {
         const pokemon = await searchPokemonByName(pokemonName);
+        resultDiv.classList.remove('hidden');
         // Create type badges
         const typeBadges = pokemon.types
             .map(t => `<span class="${getTypeColor(t.type.name)} text-white px-3 py-1 rounded-full text-sm font-bold uppercase">${t.type.name}</span>`)
